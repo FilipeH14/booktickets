@@ -15,7 +15,15 @@ class HomeScreen extends StatelessWidget {
                 Row(
                   children: [
                     const Text('Good Morning'),
-                    Image.asset('assets/images/img_1.png'),
+                    Container(
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(10),
+                        image: const DecorationImage(
+                          image: AssetImage('assets/images/img_1.png'),
+                        ),
+                      ),
+                    ),
+                    // Image.asset('assets/images/img_1.png'),
                   ],
                 )
               ],
