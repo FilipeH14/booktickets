@@ -1,4 +1,6 @@
+import 'package:booktickets/screens/ticket_view.dart';
 import 'package:booktickets/utils/app_styles.dart';
+import 'package:fluentui_icons/fluentui_icons.dart';
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
 
@@ -46,10 +48,50 @@ class HomeScreen extends StatelessWidget {
                     ),
                     // Image.asset('assets/images/img_1.png'),
                   ],
-                )
+                ),
+                const Gap(25),
+                Container(
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(10),
+                    color: const Color(0xFFF4F6FD),
+                  ),
+                  padding:
+                      const EdgeInsets.symmetric(horizontal: 12, vertical: 12),
+                  child: Row(
+                    children: [
+                      const Icon(
+                        FluentSystemIcons.ic_fluent_search_regular,
+                        color: Color(0xFFBFC205),
+                      ),
+                      Text(
+                        'Search',
+                        style: Styles.headLineStyle4,
+                      ),
+                    ],
+                  ),
+                ),
+                const Gap(25),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Text(
+                      'Upcoming Fligth',
+                      style: Styles.headLineStyle2,
+                    ),
+                    InkWell(
+                      child: Text(
+                        'View All',
+                        style: Styles.textStyle.copyWith(color: Styles.primaryColor),
+                      ),
+                      onTap: () => print('You are tap!!'),
+                    ),
+                  ],
+                ),
               ],
             ),
           ),
+          const Gap(15),
+          const TicketView(),
         ],
       ),
     );
